@@ -10,5 +10,5 @@ void draw(){
     line(0,x,y,400);
     line(y,0,400,x);
    }
- }
   
+}
