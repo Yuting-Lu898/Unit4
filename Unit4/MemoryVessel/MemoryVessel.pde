@@ -3,8 +3,8 @@
 }
 
 int widSpa=10,lenSpa=10,space=20;
-float scale=1;
-float showerWid=50*scale,showerLeng=100*scale,showerDif=10*scale,showerDe=110;
+float scale=0.5;
+float showerWid=50*scale,showerLeng=100*scale,showerDif=10*scale,showerDe=110*scale;
 void draw(){
   showerHub();
 }
