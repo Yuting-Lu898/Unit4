@@ -1,51 +1,51 @@
+PImage museum;
+ 
  void setup(){
-  size(400,400);
+  size(800,600);
+  museum=loadImage("museum.jpg");
 }
 
 int widSpa=10,lenSpa=10,space=20;
 float scale=0.5;
 float showerWid=50*scale,showerLeng=100*scale,showerDif=10*scale,showerDe=110*scale;
 void draw(){
+  image(museum,0,0,width,height);
   showerHub();
   cup(200,120);
   girl(100,120);
   father(250,120);
 }
-void father(float x,float y){
-circle(x+7,y+5,20);//hair
-circle(x+25,y+5,30);
-rect(x-space,y+25,showerLeng*1.6,showerDe*2,50);//face
-rect(x,y,40,50,50);//body
 
+
+void showerHub(){
+shower(400,400);
 }
 
+void father(float x,float y){
+//right arm
+  pushMatrix();
+rotate(radians(-15));
+rect(x-140,y+120,100,20,5);
+popMatrix();
+//left arm;
+pushMatrix();
+rotate(radians(-10));
+rect(x+10,y+110,20,100,10);
+popMatrix();
 
 
+circle(x+7,y+5,20);//hair
+circle(x+25,y+5,30);
+rect(x-space,y+50,showerLeng*1.6,showerDe*2,50);//body
+rect(x,y,40,50,50);//face
 
+//legs
+triangle(x-10,y+150,x-13,y+250,x+15,y+250);
+triangle(x-10,y+150,x+20,y+150,x+15,y+250);
+triangle(x+50,y+150,x+20,y+150,x+23,y+250);
+triangle(x+53,y+250,x+50,y+150,x+23,y+250);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 void girl(float x,float y){
 pushStyle();
@@ -81,29 +81,6 @@ ellipse(x+showerLeng/4,y+showerLeng/1.5,showerWid*1.8,showerWid/2.5);
 ellipse(x+showerLeng/4,y+showerLeng/1.6,showerWid*1.6,showerWid/3);
 arc(x,y,100,10,10,10);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-void showerHub(){
-shower(130,100);
-}
-
 void shower(int x,int y){
   pushStyle();
   fill(0);
@@ -116,5 +93,4 @@ fill(255);
 triangle(x,y, x+showerWid,y+showerDif,x+showerWid,y-showerDif);
 triangle(x+showerLeng,y, x+showerWid,y+showerDif,x+showerWid,y-showerDif);
 popStyle();
-
 }
