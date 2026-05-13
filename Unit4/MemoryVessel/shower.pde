@@ -1,4 +1,4 @@
-void shower(int x,int y){
+ void shower(int x,int y){
   pushStyle();
   fill(0);
 triangle(x,y,x+showerWid,y+showerDif,x,y+showerLeng);
